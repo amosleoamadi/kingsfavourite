@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Adjust scroll-margin-top on sections so the header doesn't block content */
+section {
+  scroll-margin-top: 20px;
+}
