@@ -7,16 +7,35 @@ const Hero = () => {
   // Simple elegant typing effect for the main heading
   useEffect(() => {
     let index = 0;
-    const interval = setInterval(() => {
-      setAnimatedNames((prev) => prev + fullNameString.charAt(index));
-      index++;
-      if (index >= fullNameString.length) {
-        clearInterval(interval);
-      }
-    }, 150);
+    let isDeleting = false;
+    let timeoutId;
 
-    return () => clearInterval(interval);
-  }, []);
+    const tick = () => {
+      setAnimatedNames(fullNameString.substring(0, index));
+
+      if (!isDeleting) {
+        if (index < fullNameString.length) {
+          index++;
+          timeoutId = setTimeout(tick, 150); // typing speed
+        } else {
+          isDeleting = true;
+          timeoutId = setTimeout(tick, 1800); // pause when fully typed
+        }
+      } else {
+        if (index > 0) {
+          index--;
+          timeoutId = setTimeout(tick, 80); // deleting speed
+        } else {
+          isDeleting = false;
+          timeoutId = setTimeout(tick, 500);
+        }
+      }
+    };
+
+    timeoutId = setTimeout(tick, 300);
+
+    return () => clearTimeout(timeoutId);
+  }, [fullNameString]);
 
   return (
     <section className="min-h-[calc(100vh-70px)] bg-[#FCFBF7] flex flex-col justify-center items-center px-4 py-16 relative select-none">

@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 
 const Details = () => {
-  const [showMap, setShowMap] = useState(false);
-
   // Formatted wedding event specifics for Google Calendar web link integration
   const calendarEventConfig = {
     title: "Wedding Ceremony & Celebration",
@@ -73,7 +70,7 @@ const Details = () => {
               <p className="font-serif text-lg text-stone-800 leading-snug">
                 St. George’s Military Church Hall, <br />
                 <span className="text-sm text-stone-500 font-sans tracking-wide">
-                  Point Road, Apapa
+                  27, Point Road, Apapa
                 </span>
               </p>
             </div>
@@ -91,12 +88,15 @@ const Details = () => {
 
             {/* Action Interaction Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <button
-                onClick={() => setShowMap(true)}
-                className="w-full sm:w-auto px-8 py-3.5 border border-stone-800 text-stone-800 text-xs tracking-widest font-sans uppercase hover:bg-stone-900 hover:text-white transition-all duration-300 rounded-xs"
+              {/* View on Map – now a direct link, no modal */}
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-8 py-3.5 border border-stone-800 text-stone-800 text-xs tracking-widest font-sans uppercase hover:bg-stone-900 hover:text-white transition-all duration-300 rounded-xs text-center"
               >
                 View on Map
-              </button>
+              </a>
 
               <a
                 href={calendarUrl}
@@ -109,38 +109,6 @@ const Details = () => {
             </div>
           </div>
         </Fade>
-
-        {/* Map Modal Popup Display Window */}
-        {showMap && (
-          <div className="fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-100 flex items-center justify-center p-4 transition-all duration-300 animate-fade-in">
-            <div className="bg-[#FCFBF7] w-full max-w-3xl rounded-xs overflow-hidden shadow-2xl border border-stone-200/50 flex flex-col relative animate-scale-up">
-              {/* Modal Head Banner Container */}
-              <div className="px-6 py-4 border-b border-stone-100 flex justify-between items-center bg-[#FCFBF7]">
-                <span className="text-xs font-sans tracking-widest text-stone-500 uppercase font-medium">
-                  St. George’s Military Church Hall Map
-                </span>
-                <button
-                  onClick={() => setShowMap(false)}
-                  className="text-stone-400 hover:text-stone-800 text-sm font-sans tracking-wide uppercase transition-colors"
-                >
-                  ✕ Close
-                </button>
-              </div>
-
-              {/* Map Iframe Body Frame container */}
-              <div className="w-full aspect-video min-h-75 md:min-h-100 bg-stone-100 relative">
-                <iframe
-                  title="St. Georges Military Church Location Map"
-                  src={googleMapsUrl}
-                  className="w-full h-full border-none"
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );
