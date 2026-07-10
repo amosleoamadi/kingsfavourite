@@ -14,7 +14,7 @@ const Footer = () => {
 
         {/* Minimal Copyright Legal Meta Label */}
         <p className="text-[10px] font-sans uppercase tracking-[0.2em] text-stone-400">
-          © {currentYear} Favour & Kingsley. All Rights Reserved.
+          © {currentYear} Favour & Kingsly. All Rights Reserved.
         </p>
       </div>
     </footer>
