@@ -9,7 +9,7 @@ const OurStory = () => {
       title: "Our Love Story",
       subtitle: "Sometimes, love finds us in the most unexpected ways.",
       content: [
-        "Our journey began through a mutual friend. On the 23, September 2024, my husband-to-be kindly offered her a ride, and during their conversation, she asked if he was married. When he replied that he wasn’t, she smiled and said, “I know someone you would like—and someone you could marry.”",
+        "Our journey began through a mutual friend. On the 23, October 2024, my husband-to-be kindly offered her a ride, and during their conversation, she asked if he was married. When he replied that he wasn’t, she smiled and said, “I know someone you would like—and someone you could marry.”",
         "She shared my contact information with him, and from that simple introduction, we began talking. Our conversations grew into friendship, friendship blossomed into love, and before we knew it, we had found in each other the person we wanted to spend forever with.",
         "Today, we are grateful for that chance encounter and excited to begin this new chapter as husband and wife.",
       ],
