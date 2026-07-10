@@ -60,7 +60,7 @@ const GuestMessage = () => {
               With love and gratitude,
             </p>
             <p className="font-serif text-2xl md:text-3xl text-stone-800 tracking-wide font-normal">
-              Kingsley & Favour
+              Kingsly & Favour
             </p>
           </div>
         </Fade>
